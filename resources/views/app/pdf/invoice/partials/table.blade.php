@@ -71,12 +71,12 @@
 
 <div class="total-display-container">
     <table width="100%" cellspacing="0px" border="0" class="total-display-table @if(count($invoice->items) > 12) page-break @endif">
-        <tr>
+        {{-- <tr>
             <td class="border-0 total-table-attribute-label">@lang('pdf_subtotal')</td>
             <td class="py-2 border-0 item-cell total-table-attribute-value">
                 {!! format_money_pdf($invoice->sub_total, $invoice->user->currency) !!}
             </td>
-        </tr>
+        </tr> --}}
 
         @if ($invoice->tax_per_item === 'YES')
             @for ($i = 0; $i < count($labels); $i++)
@@ -135,7 +135,6 @@
             </td>
             <td
                 class="py-8 border-0 total-border-right item-cell total-table-attribute-value"
-                style="color: #5851D8"
             >
                 {!! format_money_pdf($invoice->total, $invoice->user->currency)!!}
             </td>
